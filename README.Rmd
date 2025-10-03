@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 Miscellaneous function, color palettes, collected doing modelling, many trivial ones.
+
 ## Installation
 
 The development version from [GitHub](https://github.com/) with:
@@ -38,6 +39,14 @@ Examples of what inside:
 more(LETTERS[rep(1:26, each=1000)])
 ```
 
+- `claim`: my workflow of cleaning data:
+  - keep original data intact and claim new varible to a predefined data (default is '.kollection'), e.g.,
+  ```r
+  original_data |> mutate(new_var = ...cleaning/recoding...) |> claim(new_var) # return the invisible mutated data
+  ```
+  then `.kollection` now have `new_var` collected. One can claim multiple as
+  `claim(a,b,c, .name = "my_cleaned_data")` to store to your own named data
+  instead of `.kollection`.
 - `pick`: wrapper of `grep` tp pick element with regex
 - `query_label`: search variable labels on labelled data (e.g.
 `haven::read_dta`)

@@ -1,3 +1,42 @@
+#' Claim columns from a data frame and store them globally
+#'
+#' This function allows you to "claim" specified columns from a data frame
+#' and store them in a global data frame named `.kollection` (or a custom name).
+#' If `.kollection` doesn't exist, it's created. If it exists but has a different
+#' number of rows, it's reinitialized to match the input data frame's row count.
+#'
+#' @param df The input data frame from which to claim columns.
+#' @param ... Unquoted column names from `df` to be claimed.
+#' @param .name The name of the global data frame to store the claimed columns.
+#'   Defaults to `".kollection"`.
+#' @return Invisibly returns the original data frame `df`.
+#' @export
+claim <- function(df, ..., .name = ".kollection") {
+  cols <- as.list(substitute(list(...)))[-1L]  # capture column symbols
+  col_names <- vapply(cols, deparse, character(1))
+  
+  if (!exists(.name, envir = .GlobalEnv)) {
+    .target <- data.frame(matrix(nrow = nrow(df), ncol = 0))  # empty df with same rows
+    assign(.name, .target, envir = .GlobalEnv)
+  }
+  
+  .target <- get(.name, envir = .GlobalEnv)
+  
+  # Ensure target has same number of rows as df
+  if (nrow(.target) != nrow(df)) {
+    .target <- data.frame(matrix(NA, nrow = nrow(df), ncol = ncol(.target)))
+    colnames(.target) <- colnames(get(.name, envir = .GlobalEnv))
+  }
+  
+  for (col_name in col_names) {
+    .target[[col_name]] <- df[[col_name]]
+  }
+  
+  assign(.name, .target, envir = .GlobalEnv)
+  glimpse(.target)
+  invisible(df)
+}
+
 #' Wrapper of suppress message library loadings
 #'
 #' @param ... name of package that is normally loaded with `library`

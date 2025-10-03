@@ -12,7 +12,9 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 Miscellaneous function, color palettes, collected doing modelling, many
-trivial ones. ## Installation
+trivial ones.
+
+## Installation
 
 The development version from [GitHub](https://github.com/) with:
 
@@ -22,16 +24,27 @@ devtools::install_github("kklot/ktools")
 
 Examples of what inside:
 
--   `more`: View a big object in a pager view similar to `bash more`,
-    press `q` to quit viewing
+- `more`: View a big object in a pager view similar to `bash more`,
+  press `q` to quit viewing
 
 ``` r
 more(LETTERS[rep(1:26, each=1000)])
 ```
 
--   `pick`: wrapper of `grep` tp pick element with regex
--   `query_label`: search variable labels on labelled data (e.g.
-    `haven::read_dta`)
+- `claim`: my workflow of cleaning data:
+  - keep original data intact and claim new varible to a predefined data
+    (default is ‘.kollection’), e.g.,
+
+  ``` r
+  original_data |> mutate(new_var = ...cleaning/recoding...) |> claim(new_var) # return the invisible mutated data
+  ```
+
+  then `.kollection` now have `new_var` collected. One can claim
+  multiple as `claim(a,b,c, .name = "my_cleaned_data")` to store to your
+  own named data instead of `.kollection`.
+- `pick`: wrapper of `grep` tp pick element with regex
+- `query_label`: search variable labels on labelled data (e.g.
+  `haven::read_dta`)
 
 ``` r
 # query KAIS surveys
@@ -43,7 +56,7 @@ query_label(b1, "cmc")
 # 4:  q318 Date of birth for last child (CMC)
 ```
 
--   `query_name`: search name on a data (e.g. `haven::read_dta`)
+- `query_name`: search name on a data (e.g. `haven::read_dta`)
 
 ``` r
 query_name(b2, "weight")                                                                                                
@@ -54,8 +67,8 @@ query_name(b2, "weight")
 # 4:   abweight      
 ```
 
--   `facet_unwrap`: unwrap a ggplot2::facet_wrap plot to view or save
-    separately
+- `facet_unwrap`: unwrap a ggplot2::facet_wrap plot to view or save
+  separately
 
 ``` r
 g <- iris %>%
@@ -65,8 +78,8 @@ g <- iris %>%
 facet_unwrap(g)
 ```
 
--   `allot`: `->` right assign with pipe (**experimental - use
-    interactive only**)
+- `allot`: `->` right assign with pipe (**experimental - use interactive
+  only**)
 
 ``` r
 # these two are equivalent
@@ -74,24 +87,24 @@ a <- tibble(x = 1)
 tibble(x = 1) %>% allot(a)
 ```
 
--   `recode_if`: like `case_when` when you want to keep original data
-    (`TRUE ~ original`)
--   `rename`: rename a column in data.frame
--   `take_note`: Write a note to file
--   `unkount`: Uncounting data frame using a weights
--   `surv_split` to split survival time for immediate death model
--   `screen_to_file`: write object on screen to a file, e.g. get
-    contents of a function
--   `char`: quoting automatic
+- `recode_if`: like `case_when` when you want to keep original data
+  (`TRUE ~ original`)
+- `rename`: rename a column in data.frame
+- `take_note`: Write a note to file
+- `unkount`: Uncounting data frame using a weights
+- `surv_split` to split survival time for immediate death model
+- `screen_to_file`: write object on screen to a file, e.g. get contents
+  of a function
+- `char`: quoting automatic
 
 ``` r
 char(a, b, c)
 # [1] "a" "b" "c"
 ```
 
--   `bracket`: put bracket around a text
--   `browse`: Show data frame in browser
--   `cd`: replicate some features of bash cd
+- `bracket`: put bracket around a text
+- `browse`: Show data frame in browser
+- `cd`: replicate some features of bash cd
 
 ``` r
 cd()
@@ -102,28 +115,28 @@ cd('-')
 #  to /Users/knguyen/Code/R/ktools
 ```
 
--   Generate AR(2) precision matrix
+- Generate AR(2) precision matrix
 
 ``` r
 AR2_Q
 ```
 
--   MakeADFun safely terminated if there is a bound error
+- MakeADFun safely terminated if there is a bound error
 
 ``` r
 MakeADFunSafe
 ```
 
--   `double_logistic`: Double logistic function
--   `findInterval2`: findInterval and return factor with label
--   `fractional_poly`: find best fit fractional polynomial using GLM
--   `kut`: Cut but automatically include min and max data’s value
--   `kompile`: compile TMB with extra `ktools`’s `C++` headers
--   `lsSize`: list objects with size
--   `napply`: n(amed)apply: lapply but automatic add names to output
--   `pfrankCopula`: Frank copulas prob
--   `tmb_fixit`: TMB fix parameters
--   NullSpace penalty
+- `double_logistic`: Double logistic function
+- `findInterval2`: findInterval and return factor with label
+- `fractional_poly`: find best fit fractional polynomial using GLM
+- `kut`: Cut but automatically include min and max data’s value
+- `kompile`: compile TMB with extra `ktools`’s `C++` headers
+- `lsSize`: list objects with size
+- `napply`: n(amed)apply: lapply but automatic add names to output
+- `pfrankCopula`: Frank copulas prob
+- `tmb_fixit`: TMB fix parameters
+- NullSpace penalty
 
 ``` r
 nullspace_penalty()
