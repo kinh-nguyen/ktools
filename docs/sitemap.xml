@@ -1,591 +1,201 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/AR2_Q.html</loc>
-  </url>
-  <url>
-    <loc>/reference/AUC.html</loc>
-  </url>
-  <url>
-    <loc>/reference/AddAlpha.html</loc>
-  </url>
-  <url>
-    <loc>/reference/KLD.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Kaxis.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Kgrid.html</loc>
-  </url>
-  <url>
-    <loc>/reference/Kolygon.html</loc>
-  </url>
-  <url>
-    <loc>/reference/MakeADFunSafe.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PlotData.html</loc>
-  </url>
-  <url>
-    <loc>/reference/R_binary.html</loc>
-  </url>
-  <url>
-    <loc>/reference/STATA_date_to_date.html</loc>
-  </url>
-  <url>
-    <loc>/reference/S_glogisI.html</loc>
-  </url>
-  <url>
-    <loc>/reference/add.html</loc>
-  </url>
-  <url>
-    <loc>/reference/adj_to_precision.html</loc>
-  </url>
-  <url>
-    <loc>/reference/allot.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_field.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_or.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_query.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bang.html</loc>
-  </url>
-  <url>
-    <loc>/reference/barplott.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bracket.html</loc>
-  </url>
-  <url>
-    <loc>/reference/browse.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cd.html</loc>
-  </url>
-  <url>
-    <loc>/reference/char.html</loc>
-  </url>
-  <url>
-    <loc>/reference/compute.html</loc>
-  </url>
-  <url>
-    <loc>/reference/corfrankCopula.html</loc>
-  </url>
-  <url>
-    <loc>/reference/crash_test.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cutat0.html</loc>
-  </url>
-  <url>
-    <loc>/reference/d2r.html</loc>
-  </url>
-  <url>
-    <loc>/reference/date_to_cmc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dfrankCopula.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dgumbelCopula.html</loc>
-  </url>
-  <url>
-    <loc>/reference/double_logistic.html</loc>
-  </url>
-  <url>
-    <loc>/reference/double_logistic2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/download.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dskewlogis.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dttb.html</loc>
-  </url>
-  <url>
-    <loc>/reference/efunc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/eval_text.html</loc>
-  </url>
-  <url>
-    <loc>/reference/f_glogisI.html</loc>
-  </url>
-  <url>
-    <loc>/reference/facet_unwrap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/file_name.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fill_polygon_h3.html</loc>
-  </url>
-  <url>
-    <loc>/reference/findInterval2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/find_consecutive.html</loc>
-  </url>
-  <url>
-    <loc>/reference/find_in_zip.html</loc>
-  </url>
-  <url>
-    <loc>/reference/format_pvalue.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fracpoly.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fractional_poly.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fwrite_bz2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/genR.html</loc>
-  </url>
-  <url>
-    <loc>/reference/genSmooth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gen_brewer.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gen_colors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gen_rw.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gen_widths.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_report.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getcoding_readstata13.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getmeta_readstata13.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gg_group.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gg_img.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gg_mat.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ggcol.html</loc>
-  </url>
-  <url>
-    <loc>/reference/gghist.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ggpie.html</loc>
-  </url>
-  <url>
-    <loc>/reference/grapes-notin-grapes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/grapes-out-grapes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/grept.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hex_fill.html</loc>
-  </url>
-  <url>
-    <loc>/reference/histt.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hlegend.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hline.html</loc>
-  </url>
-  <url>
-    <loc>/reference/image2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/invert.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_negative.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_sorted.html</loc>
-  </url>
-  <url>
-    <loc>/reference/is_windows.html</loc>
-  </url>
-  <url>
-    <loc>/reference/iso2name.html</loc>
-  </url>
-  <url>
-    <loc>/reference/join_list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/kill.html</loc>
-  </url>
-  <url>
-    <loc>/reference/kompile.html</loc>
-  </url>
-  <url>
-    <loc>/reference/kring_smooth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/kut.html</loc>
-  </url>
-  <url>
-    <loc>/reference/labelOutlier.html</loc>
-  </url>
-  <url>
-    <loc>/reference/label_table.html</loc>
-  </url>
-  <url>
-    <loc>/reference/list_name_to_column.html</loc>
-  </url>
-  <url>
-    <loc>/reference/list_zip.html</loc>
-  </url>
-  <url>
-    <loc>/reference/load_pkg.html</loc>
-  </url>
-  <url>
-    <loc>/reference/log_prec_prior.html</loc>
-  </url>
-  <url>
-    <loc>/reference/logistic.html</loc>
-  </url>
-  <url>
-    <loc>/reference/logplot.html</loc>
-  </url>
-  <url>
-    <loc>/reference/long_matrix.html</loc>
-  </url>
-  <url>
-    <loc>/reference/lsSize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/make_re_matrix.html</loc>
-  </url>
-  <url>
-    <loc>/reference/map.html</loc>
-  </url>
-  <url>
-    <loc>/reference/meanstat.html</loc>
-  </url>
-  <url>
-    <loc>/reference/month_year_to_cmc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/more.html</loc>
-  </url>
-  <url>
-    <loc>/reference/most_frequent.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mustats_3plus.html</loc>
-  </url>
-  <url>
-    <loc>/reference/n_unique.html</loc>
-  </url>
-  <url>
-    <loc>/reference/name2iso.html</loc>
-  </url>
-  <url>
-    <loc>/reference/name2list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/name_collection.html</loc>
-  </url>
-  <url>
-    <loc>/reference/named_list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nan_rm.html</loc>
-  </url>
-  <url>
-    <loc>/reference/napply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nullspace_penalty.html</loc>
-  </url>
-  <url>
-    <loc>/reference/open_file.html</loc>
-  </url>
-  <url>
-    <loc>/reference/orderBy.html</loc>
-  </url>
-  <url>
-    <loc>/reference/p_adj.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pfrankCopula.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pfu2TCID50.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pgumbelCopula.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pick.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_segment.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_smooth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotb.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ploth.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotlnp.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotm.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plotp.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plott.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plottc.html</loc>
-  </url>
-  <url>
-    <loc>/reference/prec2sd.html</loc>
-  </url>
-  <url>
-    <loc>/reference/put.html</loc>
-  </url>
-  <url>
-    <loc>/reference/py2r.html</loc>
-  </url>
-  <url>
-    <loc>/reference/quantile95.html</loc>
-  </url>
-  <url>
-    <loc>/reference/quartz_off.html</loc>
-  </url>
-  <url>
-    <loc>/reference/query_label.html</loc>
-  </url>
-  <url>
-    <loc>/reference/query_name.html</loc>
-  </url>
-  <url>
-    <loc>/reference/query_readstata13.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rBind.html</loc>
-  </url>
-  <url>
-    <loc>/reference/range2seq.html</loc>
-  </url>
-  <url>
-    <loc>/reference/range_label.html</loc>
-  </url>
-  <url>
-    <loc>/reference/read_in_zip.html</loc>
-  </url>
-  <url>
-    <loc>/reference/readnbind.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rebase.html</loc>
-  </url>
-  <url>
-    <loc>/reference/recode_if.html</loc>
-  </url>
-  <url>
-    <loc>/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>/reference/refactor.html</loc>
-  </url>
-  <url>
-    <loc>/reference/remove_consecutive.html</loc>
-  </url>
-  <url>
-    <loc>/reference/remove_text.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rename_col.html</loc>
-  </url>
-  <url>
-    <loc>/reference/resize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rmvnorm_sparseprec.html</loc>
-  </url>
-  <url>
-    <loc>/reference/row2id.html</loc>
-  </url>
-  <url>
-    <loc>/reference/s2n.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sample_tmb.html</loc>
-  </url>
-  <url>
-    <loc>/reference/savePDF.html</loc>
-  </url>
-  <url>
-    <loc>/reference/savePNG.html</loc>
-  </url>
-  <url>
-    <loc>/reference/savePs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/save_jpg_for_submission.html</loc>
-  </url>
-  <url>
-    <loc>/reference/save_to.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sbatch.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_inverse.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_to_n.html</loc>
-  </url>
-  <url>
-    <loc>/reference/scale_to_range.html</loc>
-  </url>
-  <url>
-    <loc>/reference/screen_to_file.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sd2prec.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sizing.html</loc>
-  </url>
-  <url>
-    <loc>/reference/skim.html</loc>
-  </url>
-  <url>
-    <loc>/reference/slurm.html</loc>
-  </url>
-  <url>
-    <loc>/reference/snaking.html</loc>
-  </url>
-  <url>
-    <loc>/reference/square.html</loc>
-  </url>
-  <url>
-    <loc>/reference/squeue.html</loc>
-  </url>
-  <url>
-    <loc>/reference/strip_U.html</loc>
-  </url>
-  <url>
-    <loc>/reference/surv_split.html</loc>
-  </url>
-  <url>
-    <loc>/reference/table.html</loc>
-  </url>
-  <url>
-    <loc>/reference/table_as_html.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tabstat.html</loc>
-  </url>
-  <url>
-    <loc>/reference/take_note.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tbl_AB.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tmb_ICs.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tmb_compile_and_load.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tmb_fixit.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tmb_load.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tmb_unload.html</loc>
-  </url>
-  <url>
-    <loc>/reference/today.html</loc>
-  </url>
-  <url>
-    <loc>/reference/unar.html</loc>
-  </url>
-  <url>
-    <loc>/reference/unkount.html</loc>
-  </url>
-  <url>
-    <loc>/reference/unroll_zip.html</loc>
-  </url>
-  <url>
-    <loc>/reference/var_ll.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vline.html</loc>
-  </url>
-  <url>
-    <loc>/reference/wait.html</loc>
-  </url>
-  <url>
-    <loc>/reference/which_empty.html</loc>
-  </url>
-  <url>
-    <loc>/reference/which_in.html</loc>
-  </url>
-  <url>
-    <loc>/reference/which_not.html</loc>
-  </url>
-  <url>
-    <loc>/reference/xyline.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/AR2_Q.html</loc></url>
+<url><loc>/reference/AUC.html</loc></url>
+<url><loc>/reference/AddAlpha.html</loc></url>
+<url><loc>/reference/KLD.html</loc></url>
+<url><loc>/reference/Kaxis.html</loc></url>
+<url><loc>/reference/Kgrid.html</loc></url>
+<url><loc>/reference/Kolygon.html</loc></url>
+<url><loc>/reference/MakeADFunSafe.html</loc></url>
+<url><loc>/reference/PlotData.html</loc></url>
+<url><loc>/reference/R_binary.html</loc></url>
+<url><loc>/reference/STATA_date_to_date.html</loc></url>
+<url><loc>/reference/S_glogisI.html</loc></url>
+<url><loc>/reference/add.html</loc></url>
+<url><loc>/reference/adj_to_precision.html</loc></url>
+<url><loc>/reference/allot.html</loc></url>
+<url><loc>/reference/as_field.html</loc></url>
+<url><loc>/reference/as_or.html</loc></url>
+<url><loc>/reference/as_query.html</loc></url>
+<url><loc>/reference/bang.html</loc></url>
+<url><loc>/reference/barplott.html</loc></url>
+<url><loc>/reference/bg.html</loc></url>
+<url><loc>/reference/bracket.html</loc></url>
+<url><loc>/reference/browse.html</loc></url>
+<url><loc>/reference/cd.html</loc></url>
+<url><loc>/reference/char.html</loc></url>
+<url><loc>/reference/check_slurm_job_status.html</loc></url>
+<url><loc>/reference/claim.html</loc></url>
+<url><loc>/reference/compute.html</loc></url>
+<url><loc>/reference/corfrankCopula.html</loc></url>
+<url><loc>/reference/crash_test.html</loc></url>
+<url><loc>/reference/cutat0.html</loc></url>
+<url><loc>/reference/d2r.html</loc></url>
+<url><loc>/reference/date_to_cmc.html</loc></url>
+<url><loc>/reference/dfrankCopula.html</loc></url>
+<url><loc>/reference/dgumbelCopula.html</loc></url>
+<url><loc>/reference/double_logistic.html</loc></url>
+<url><loc>/reference/double_logistic2.html</loc></url>
+<url><loc>/reference/download.html</loc></url>
+<url><loc>/reference/dskewlogis.html</loc></url>
+<url><loc>/reference/dttb.html</loc></url>
+<url><loc>/reference/efunc.html</loc></url>
+<url><loc>/reference/eval_text.html</loc></url>
+<url><loc>/reference/f_glogisI.html</loc></url>
+<url><loc>/reference/facet_unwrap.html</loc></url>
+<url><loc>/reference/file_name.html</loc></url>
+<url><loc>/reference/fill_polygon_h3.html</loc></url>
+<url><loc>/reference/findInterval2.html</loc></url>
+<url><loc>/reference/find_consecutive.html</loc></url>
+<url><loc>/reference/find_in_zip.html</loc></url>
+<url><loc>/reference/format_pvalue.html</loc></url>
+<url><loc>/reference/fracpoly.html</loc></url>
+<url><loc>/reference/fractional_poly.html</loc></url>
+<url><loc>/reference/fwrite_bz2.html</loc></url>
+<url><loc>/reference/genR.html</loc></url>
+<url><loc>/reference/genSmooth.html</loc></url>
+<url><loc>/reference/gen_brewer.html</loc></url>
+<url><loc>/reference/gen_colors.html</loc></url>
+<url><loc>/reference/gen_rw.html</loc></url>
+<url><loc>/reference/gen_widths.html</loc></url>
+<url><loc>/reference/get_report.html</loc></url>
+<url><loc>/reference/getcoding_readstata13.html</loc></url>
+<url><loc>/reference/getmeta_readstata13.html</loc></url>
+<url><loc>/reference/gg_group.html</loc></url>
+<url><loc>/reference/gg_img.html</loc></url>
+<url><loc>/reference/gg_mat.html</loc></url>
+<url><loc>/reference/ggcol.html</loc></url>
+<url><loc>/reference/gghist.html</loc></url>
+<url><loc>/reference/ggpie.html</loc></url>
+<url><loc>/reference/grapes-notin-grapes.html</loc></url>
+<url><loc>/reference/grapes-out-grapes.html</loc></url>
+<url><loc>/reference/grept.html</loc></url>
+<url><loc>/reference/hex_fill.html</loc></url>
+<url><loc>/reference/histt.html</loc></url>
+<url><loc>/reference/hlegend.html</loc></url>
+<url><loc>/reference/hline.html</loc></url>
+<url><loc>/reference/image2.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/invert.html</loc></url>
+<url><loc>/reference/is_negative.html</loc></url>
+<url><loc>/reference/is_sorted.html</loc></url>
+<url><loc>/reference/is_windows.html</loc></url>
+<url><loc>/reference/iso2name.html</loc></url>
+<url><loc>/reference/join_list.html</loc></url>
+<url><loc>/reference/kill.html</loc></url>
+<url><loc>/reference/kompile.html</loc></url>
+<url><loc>/reference/kring_smooth.html</loc></url>
+<url><loc>/reference/kut.html</loc></url>
+<url><loc>/reference/labelOutlier.html</loc></url>
+<url><loc>/reference/label_table.html</loc></url>
+<url><loc>/reference/list_name_to_column.html</loc></url>
+<url><loc>/reference/list_zip.html</loc></url>
+<url><loc>/reference/load_pkg.html</loc></url>
+<url><loc>/reference/log_prec_prior.html</loc></url>
+<url><loc>/reference/logistic.html</loc></url>
+<url><loc>/reference/logplot.html</loc></url>
+<url><loc>/reference/long_matrix.html</loc></url>
+<url><loc>/reference/lsSize.html</loc></url>
+<url><loc>/reference/make_re_matrix.html</loc></url>
+<url><loc>/reference/map.html</loc></url>
+<url><loc>/reference/meanstat.html</loc></url>
+<url><loc>/reference/month_year_to_cmc.html</loc></url>
+<url><loc>/reference/more.html</loc></url>
+<url><loc>/reference/most_frequent.html</loc></url>
+<url><loc>/reference/mustats_3plus.html</loc></url>
+<url><loc>/reference/n_unique.html</loc></url>
+<url><loc>/reference/name2iso.html</loc></url>
+<url><loc>/reference/name2list.html</loc></url>
+<url><loc>/reference/name_collection.html</loc></url>
+<url><loc>/reference/named_list.html</loc></url>
+<url><loc>/reference/nan_rm.html</loc></url>
+<url><loc>/reference/napply.html</loc></url>
+<url><loc>/reference/nullspace_penalty.html</loc></url>
+<url><loc>/reference/open_file.html</loc></url>
+<url><loc>/reference/orderBy.html</loc></url>
+<url><loc>/reference/p_adj.html</loc></url>
+<url><loc>/reference/pfrankCopula.html</loc></url>
+<url><loc>/reference/pfu2TCID50.html</loc></url>
+<url><loc>/reference/pgumbelCopula.html</loc></url>
+<url><loc>/reference/pick.html</loc></url>
+<url><loc>/reference/plot_segment.html</loc></url>
+<url><loc>/reference/plot_smooth.html</loc></url>
+<url><loc>/reference/plotb.html</loc></url>
+<url><loc>/reference/ploth.html</loc></url>
+<url><loc>/reference/plotlnp.html</loc></url>
+<url><loc>/reference/plotm.html</loc></url>
+<url><loc>/reference/plotp.html</loc></url>
+<url><loc>/reference/plott.html</loc></url>
+<url><loc>/reference/plottc.html</loc></url>
+<url><loc>/reference/prec2sd.html</loc></url>
+<url><loc>/reference/put.html</loc></url>
+<url><loc>/reference/py2r.html</loc></url>
+<url><loc>/reference/quantile95.html</loc></url>
+<url><loc>/reference/quartz_off.html</loc></url>
+<url><loc>/reference/query_label.html</loc></url>
+<url><loc>/reference/query_name.html</loc></url>
+<url><loc>/reference/query_readstata13.html</loc></url>
+<url><loc>/reference/rBind.html</loc></url>
+<url><loc>/reference/range2seq.html</loc></url>
+<url><loc>/reference/range_label.html</loc></url>
+<url><loc>/reference/read_in_zip.html</loc></url>
+<url><loc>/reference/readnbind.html</loc></url>
+<url><loc>/reference/rebase.html</loc></url>
+<url><loc>/reference/recode_if.html</loc></url>
+<url><loc>/reference/reexports.html</loc></url>
+<url><loc>/reference/refactor.html</loc></url>
+<url><loc>/reference/remove_consecutive.html</loc></url>
+<url><loc>/reference/remove_text.html</loc></url>
+<url><loc>/reference/rename_col.html</loc></url>
+<url><loc>/reference/resize.html</loc></url>
+<url><loc>/reference/rmvnorm_sparseprec.html</loc></url>
+<url><loc>/reference/row2id.html</loc></url>
+<url><loc>/reference/run_inla_on_slurm.html</loc></url>
+<url><loc>/reference/s2n.html</loc></url>
+<url><loc>/reference/sample_tmb.html</loc></url>
+<url><loc>/reference/savePDF.html</loc></url>
+<url><loc>/reference/savePNG.html</loc></url>
+<url><loc>/reference/savePs.html</loc></url>
+<url><loc>/reference/save_jpg_for_submission.html</loc></url>
+<url><loc>/reference/save_to.html</loc></url>
+<url><loc>/reference/sbatch.html</loc></url>
+<url><loc>/reference/scale_inverse.html</loc></url>
+<url><loc>/reference/scale_to_n.html</loc></url>
+<url><loc>/reference/scale_to_range.html</loc></url>
+<url><loc>/reference/screen_to_file.html</loc></url>
+<url><loc>/reference/sd2prec.html</loc></url>
+<url><loc>/reference/sizing.html</loc></url>
+<url><loc>/reference/skim.html</loc></url>
+<url><loc>/reference/slurm.html</loc></url>
+<url><loc>/reference/snaking.html</loc></url>
+<url><loc>/reference/square.html</loc></url>
+<url><loc>/reference/squeue.html</loc></url>
+<url><loc>/reference/strip_U.html</loc></url>
+<url><loc>/reference/surv_split.html</loc></url>
+<url><loc>/reference/table_as_html.html</loc></url>
+<url><loc>/reference/tabstat.html</loc></url>
+<url><loc>/reference/take_note.html</loc></url>
+<url><loc>/reference/tbl_AB.html</loc></url>
+<url><loc>/reference/tmb_ICs.html</loc></url>
+<url><loc>/reference/tmb_compile_and_load.html</loc></url>
+<url><loc>/reference/tmb_fixit.html</loc></url>
+<url><loc>/reference/tmb_load.html</loc></url>
+<url><loc>/reference/tmb_unload.html</loc></url>
+<url><loc>/reference/today.html</loc></url>
+<url><loc>/reference/unar.html</loc></url>
+<url><loc>/reference/unkount.html</loc></url>
+<url><loc>/reference/unroll_zip.html</loc></url>
+<url><loc>/reference/var_ll.html</loc></url>
+<url><loc>/reference/vline.html</loc></url>
+<url><loc>/reference/wait.html</loc></url>
+<url><loc>/reference/which_empty.html</loc></url>
+<url><loc>/reference/which_in.html</loc></url>
+<url><loc>/reference/which_not.html</loc></url>
+<url><loc>/reference/xyline.html</loc></url>
 </urlset>
+
