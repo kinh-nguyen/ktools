@@ -86,7 +86,7 @@ sizing <- function(w = 7, h = 4) {
 
 #' Unwrap a facet_wrap plot
 #' 
-#' Useful when there are a lot of panels in \code{\link[ggplot2]{facet_wrap})
+#' Useful when there are a lot of panels 
 #' and you want to browse (and optionally save) them one by one
 #' 
 #' @param g the ggplot2 object created as normal
@@ -138,7 +138,6 @@ facet_unwrap <- function(g, plot = TRUE, save = FALSE, path = '.', ...) {
 #'
 #' @param a matrix which columns are to plotted
 #'
-#' @return
 #' @export
 gg_img <- function(m)
 {
@@ -158,7 +157,6 @@ gg_img <- function(m)
 #'
 #' @param a matrix which columns are to plotted
 #'
-#' @return
 #' @export
 gg_mat <- function(m)
 {
@@ -180,7 +178,6 @@ gg_mat <- function(m)
 #' @param y y-axis
 #' @param g grouping variabe
 #'
-#' @return
 #' @export
 gg_group <- function(.data, x, y, g)
 {

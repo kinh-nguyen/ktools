@@ -18,7 +18,6 @@ tmb_unload <- function(name) {
 #' the original value is saved a attributes
 #' 
 #' @param x the covariate that we wish to smooth
-#' @value a sparse matrix
 #' @details the original values is made unique and sorted
 #' @export 
 #' @examples 

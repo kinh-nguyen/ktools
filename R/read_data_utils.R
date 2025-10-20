@@ -36,7 +36,6 @@ file_name <- function(path, keep_extension = FALSE, escape_space = FALSE,...) {
 #' @param new_position a integer vector specify what do you want the refactor
 #' order look like, e.g., from 1, 2, 3 to 3, 1, 2
 #'
-#' @return
 #' @export
 #'
 #' @examples

@@ -128,18 +128,6 @@ log_prec_prior <- function(log_prec, u, alpha) {
   log(theta / 2.0) - theta * exp(-log_prec / 2) - log_prec / 2
 }
 
-#' tabulate a variable with pipe
-#' 
-#' default table is easier to read than \code{\link[dplyr]{count}}
-#' @param  .data data containing the variable to tabulate
-#' @param var the variable to tabulate
-#' @inheritParam base::table useNA
-#' @inheritDotParams base::table
-#' @export 
-table <- function(.data, var, useNA = 'a', ...) {
-    var <- deparse(substitute(var))
-    base::table(.data[, var], useNA = useNA, ...)
-}
 #' recode keeping original data when conditions have NA
 #'
 #' \code{\link[dplyr]{if_else}} will replace original data with NA when
@@ -197,8 +185,6 @@ is_missing <- is.na
 #' 
 #' @param url directly link 
 #' @param path where to save
-#' @inheritParam httr::write_disk
-#' @inheritDotParams httr::GET
 download <- function(url, path = '.', overwrite = FALSE,...) {
     file_name <- paste0(path, URLdecode(basename(url)))
     if (file.exists(file_name)) {
@@ -330,7 +316,6 @@ surv_split <- function(x, duration, event, cuts,
 #' @param x a vector to rebase to start from 0 or 1
 #' @param cpp use C++ index (starting from zero instead of one)
 #'
-#' @return
 #' @export
 rebase <- function(x, cpp = FALSE)
 {
@@ -749,9 +734,6 @@ add_to <- compute
 #' @param midpoint2 midpoint where the chance occurs in the second period
 #' @return vector of length x
 #' @seealso \code{\link{logistic}}
-#' @references 
-#' @note 
-#' @author
 #' @examples
 #' plotl(double_logistic(bound1=0.1, bound2=0.8))
 #' plotl(double_logistic(bound1=0.8, bound2=0.1))

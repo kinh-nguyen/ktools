@@ -46,7 +46,8 @@ a prompt will appear asking to create a new directory when necessary.}
 invisible a list of ggplot objects, one for each panels
 }
 \description{
-
+Useful when there are a lot of panels 
+and you want to browse (and optionally save) them one by one
 }
 \examples{
 \dontrun{
