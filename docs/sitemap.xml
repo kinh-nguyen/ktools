@@ -30,6 +30,7 @@
 <url><loc>/reference/cd.html</loc></url>
 <url><loc>/reference/char.html</loc></url>
 <url><loc>/reference/check_slurm_job_status.html</loc></url>
+<url><loc>/reference/check_tmb_slurm_status.html</loc></url>
 <url><loc>/reference/claim.html</loc></url>
 <url><loc>/reference/compute.html</loc></url>
 <url><loc>/reference/corfrankCopula.html</loc></url>
@@ -102,6 +103,7 @@
 <url><loc>/reference/long_matrix.html</loc></url>
 <url><loc>/reference/lsSize.html</loc></url>
 <url><loc>/reference/make_re_matrix.html</loc></url>
+<url><loc>/reference/make_tmb_map.html</loc></url>
 <url><loc>/reference/map.html</loc></url>
 <url><loc>/reference/meanstat.html</loc></url>
 <url><loc>/reference/month_year_to_cmc.html</loc></url>
@@ -156,6 +158,7 @@
 <url><loc>/reference/rmvnorm_sparseprec.html</loc></url>
 <url><loc>/reference/row2id.html</loc></url>
 <url><loc>/reference/run_inla_on_slurm.html</loc></url>
+<url><loc>/reference/run_tmb_on_slurm.html</loc></url>
 <url><loc>/reference/s2n.html</loc></url>
 <url><loc>/reference/sample_tmb.html</loc></url>
 <url><loc>/reference/savePDF.html</loc></url>
