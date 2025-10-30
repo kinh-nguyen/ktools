@@ -355,3 +355,277 @@ sample_tmb <- function(fit, obj, nsample = 1000, random_only = TRUE, verbose = T
   }
   smp
 }
+
+#' Create a TMB 'map' list from parameter templates
+#'
+#' Convert a named list of parameter values and a corresponding
+#' `map_words` specification into a list of factor maps suitable for TMB's
+#' `map` argument. Supports fixing all elements, tying elements, leaving
+#' parameters free, or providing explicit numeric/factor patterns.
+#'
+#' @param params Named list of model parameters (vectors or matrices) as used
+#'   when building a TMB model.
+#' @param map_words Named list specifying mapping rules for parameters. Supported
+#'   values include:
+#'   - "all" or "fixed": fix all elements of the parameter
+#'   - "tied", "shared", or "constant": tie all elements to a single level
+#'   - "none" or "free": leave parameter free (no map entry created)
+#'   - numeric/factor vector or matrix: explicit pattern defining groups/levels
+#' @return A named list of factor objects (one per parameter) representing the
+#'   mapping to be passed to TMB's `map` argument. Parameters with "none"/"free"
+#'   are omitted (left free).
+#' @export
+#' @examples
+#' params <- list(beta = rep(0, 3), Sigma = matrix(0, 2, 2))
+#' make_tmb_map(params, list(beta = "shared", Sigma = "none"))
+make_tmb_map <- function(params, map_words) {
+  map <- list()
+  for (nm in names(map_words)) {
+    val <- params[[nm]]
+    key <- map_words[[nm]]
+    len <- length(val)
+    if (is.matrix(val)) shape <- dim(val)
+
+    # Fixed/All
+    if (is.character(key) && key %in% c("all", "fixed")) {
+      map_matrix <- factor(rep(NA, len), levels = NA)
+      if (is.matrix(val)) dim(map_matrix) <- shape
+      map[[nm]] <- map_matrix; next
+    }
+    # Shared/Tied
+    if (is.character(key) && key %in% c("tied", "shared", "constant")) {
+      map_matrix <- factor(rep(1, len))
+      if (is.matrix(val)) dim(map_matrix) <- shape
+      map[[nm]] <- map_matrix; next
+    }
+    if (is.character(key) && key %in% c("none", "free")) {
+      next
+    }
+    # Explicit pattern
+    if (is.numeric(key) || is.factor(key)) {
+      if (!is.matrix(val)) {
+        if (length(key) != len) stop(sprintf(
+          "Map for '%s': vector pattern length (%d) does not match parameter length (%d)", nm, length(key), len))
+        map_matrix <- factor(key); map[[nm]] <- map_matrix; next
+      }
+      if (is.matrix(key)) {
+        if (!identical(dim(key), shape)) stop(sprintf(
+          "Map for '%s': matrix pattern shape (%s) does not match parameter shape (%s)",
+            nm, paste(dim(key), collapse=","), paste(shape, collapse=",")))
+        map_matrix <- factor(as.vector(key)); dim(map_matrix) <- shape; map[[nm]] <- map_matrix; next
+      }
+      if (length(key) == len) {
+        map_matrix <- factor(key); dim(map_matrix) <- shape; map[[nm]] <- map_matrix; next
+      } else {
+        stop(sprintf(
+          "Map for '%s': numeric/factor pattern length (%d) does not match parameter length (%d)", nm, length(key), len))
+      }
+    }
+    stop(sprintf("Unrecognized map specification for '%s': %s", nm, key))
+  }
+  return(map)
+}
+
+#' Run TMB Model on SLURM Cluster
+#'
+#' Creates and optionally submits a SLURM job to run a TMB model on a computing cluster.
+#'
+#' @param data Data list for TMB model
+#' @param params Parameter list for TMB model
+#' @param random Character vector of random effect parameter names
+#' @param map_words Named list of parameter mapping specifications
+#' @param dll Character name of compiled TMB model (without extension)
+#' @param n_cores Number of cores for OpenMP parallelization
+#' @param job_name Character name for SLURM job
+#' @param partition Character name of SLURM partition
+#' @param time Character time limit for job ("HH:MM:SS")
+#' @param ntasks Number of tasks for SLURM
+#' @param nodes Number of nodes for SLURM
+#' @param conda_env Character name of conda environment
+#' @param rscript Character name for generated R script
+#' @param work_dir Character path to working directory
+#' @param submit Logical whether to submit job immediately
+#' @param submit_cmd Character command to submit SLURM job
+#' @param data_path Character path to save data
+#' @param param_path Character path to save parameters
+#' @param map_path Character path to save parameter map
+#' @param bashrc_path Character path to bashrc file
+#'
+#' @return Invisibly returns a list with:
+#'   \item{submitted}{Logical indicating if job was submitted}
+#'   \item{output}{System output from job submission if applicable}
+#'   \item{rscript}{Path to generated R script}
+#'   \item{slurm}{Path to generated SLURM script}
+#'   \item{data}{Path to saved data}
+#'   \item{param}{Path to saved parameters}
+#'   \item{map}{Path to saved parameter map if applicable}
+#'
+#' @details
+#' This function generates necessary R and SLURM scripts to run a TMB model
+#' on a SLURM-based computing cluster. It saves model data and parameters
+#' to files, creates an R script to fit the model, and a SLURM submission
+#' script. The job can be submitted immediately or the scripts can be
+#' saved for later submission.
+#'
+#' @export
+run_tmb_on_slurm <- function(
+  data,
+  params,
+  random = NULL,
+  map_words = NULL,           
+  dll = "model",
+  n_cores     = NULL,        
+  job_name    = "TMBjob",
+  partition   = "fuchs",
+  time        = "8:00:00",
+  ntasks      = 1,
+  nodes       = 1,
+  conda_env   = "kinh",
+  rscript     = "run_tmb.r",
+  work_dir    = ".",
+  submit      = FALSE,
+  submit_cmd  = "sbatch",
+  data_path   = "tmb_data.RData",
+  param_path  = "tmb_params.RData",
+  map_path    = "tmb_param_map.RData",
+  bashrc_path = "/home/fuchs/fias/knguyen/.bashrc"
+) {
+  # Save supplied objects
+  save(data, file = data_path)
+  save(params, file = param_path)
+
+  # Construct and save TMB map object if requested
+  map <- list()
+  if (!is.null(map_words)) {
+    map <- make_tmb_map(params, map_words)
+    save(map, file = map_path)
+  }
+
+  rscript_path <- file.path(work_dir, rscript)
+  # R code to load objects and run TMB, use map if present
+  rlines <- c(
+    "library(TMB)",
+    sprintf('load("%s")\nload("%s")', data_path, param_path),
+    if (!is.null(map_words)) sprintf('load("%s")', map_path) else "",
+    sprintf('compile("%s.cpp")', dll),
+    sprintf('dyn.load(dynlib("%s"))', dll),
+    if (!is.null(n_cores)) sprintf('openmp(n = %d)', n_cores) else "",
+    sprintf(
+      'obj <- MakeADFun(
+  data = data,
+  parameters = params%s%s,
+  DLL = "%s"
+)',
+      if (!is.null(random)) sprintf(',\n  random = c(%s)', paste(sprintf('"%s"', random), collapse = ",")) else "",
+      if (!is.null(map_words)) ',\n  map = map' else "",
+      dll
+    ),
+    "opt <- nlminb(obj$par, obj$fn, obj$gr)",
+    "sdrep <- sdreport(obj)",
+    'save(opt, sdrep, obj, file="tmb_result.RData")'
+  )
+  writeLines(rlines, con = rscript_path)
+
+  slurm_path <- file.path(work_dir, "submit_tmb.sh")
+  cat(
+    sprintf(
+      "#!/bin/bash
+#SBATCH --job-name=%s
+#SBATCH --partition=%s
+#SBATCH --ntasks=%d
+#SBATCH --nodes=%d
+#SBATCH --time=%s
+
+source %s
+conda activate %s
+
+cd %s
+srun R CMD BATCH --no-save --no-restore ./run_tmb.r
+",
+      job_name, partition, ntasks, nodes, time,
+      bashrc_path,
+      conda_env,
+      work_dir
+    ),
+    file = slurm_path
+  )
+
+  message("Files written: ", rscript_path, ", ", slurm_path, ", ", data_path, ", ", param_path, if (!is.null(map_words)) paste(",", map_path) else "")
+  
+  if (submit) {
+    msg <- tryCatch(
+      system2(submit_cmd, slurm_path, stdout = TRUE, stderr = TRUE),
+      error = function(e) paste("Error submitting SLURM job:", e$message)
+    )
+    message("Submission output:\n", paste(msg, collapse = "\n"))
+    return(invisible(list(submitted = TRUE, output = msg,
+                         rscript = rscript_path, slurm = slurm_path, data = data_path, param = param_path, map = if (!is.null(map_words)) map_path else NULL)))
+  } else {
+    message("To submit, run: ", submit_cmd, " ", slurm_path)
+    return(invisible(list(submitted = FALSE,
+                         rscript = rscript_path, slurm = slurm_path, data = data_path, param = param_path, map = if (!is.null(map_words)) map_path else NULL)))
+  }
+}
+
+#' Check Status of TMB SLURM Job
+#' 
+#' Checks the status of a TMB model running as a SLURM job by examining the job queue
+#' and output files. This function helps monitor TMB jobs submitted to a SLURM cluster.
+#'
+#' @param slurm_script Character. Path to the SLURM submission script. Default is "submit_tmb.sh".
+#' @param r_batch_out Character. Path to the R batch output file. Default is "run_tmb.r.Rout".
+#'
+#' @return Character. Returns the job status as one of:
+#'   - Full SLURM queue details if job is running/queued
+#'   - "COMPLETED" if job finished successfully
+#'   - "FAILED" if job ended with error
+#'   - "UNKNOWN" if status cannot be determined
+#'
+#' @details
+#' The function works by:
+#' 1. Extracting job name from SLURM script
+#' 2. Checking if job is in SLURM queue
+#' 3. If not in queue, examining R output log for completion/error
+#'
+#' @export
+check_tmb_slurm_status <- function(
+  slurm_script = "submit_tmb.sh",
+  r_batch_out = "run_tmb.r.Rout"
+) {
+  # Extract job name from the SLURM script
+  job_name <- NULL
+  if (file.exists(slurm_script)) {
+    lines <- readLines(slurm_script, warn = FALSE)
+    name_line <- grep("^#SBATCH --job-name=", lines, value = TRUE)
+    if (length(name_line)) {
+      job_name <- sub("^#SBATCH --job-name=", "", name_line[1])
+      job_name <- trimws(job_name)
+    }
+  }
+  # Query squeue for this job name
+  if (!is.null(job_name)) {
+    cmd <- sprintf("squeue --name=%s", shQuote(job_name))
+    status <- tryCatch(system(cmd, intern = TRUE), error = function(e) NULL)
+    if (length(status) > 1) { # header plus job(s)
+      message("Job is currently QUEUED or RUNNING:")
+      cat(paste(status, collapse = "\n"), "\n")
+      return(invisible(status))
+    }
+  }
+  # If not in squeue, check for completion via .Rout or result file
+  if (file.exists(r_batch_out)) {
+    message("SLURM job is not in queue. Checking output log: ", r_batch_out)
+    tail_log <- tail(readLines(r_batch_out, warn = FALSE), 20)
+    cat(paste(tail_log, collapse = "\n"))
+    if (any(grepl("Execution halted", tail_log))) {
+      warning("The job ended with an error (Execution halted).")
+      return("FAILED (see log)")
+    }
+    if (any(grepl("save\\(opt, sdrep, obj", tail_log))) {
+      message("TMB job appears to have finished successfully (result file likely written).")
+      return("COMPLETED")
+    }
+  }
+  message("Job not in queue and no log file found; it may be finished, failed, or never submitted.")
+  return("UNKNOWN")
+}
